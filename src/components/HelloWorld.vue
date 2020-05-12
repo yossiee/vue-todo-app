@@ -13,8 +13,9 @@
         :key="todo.text"
       >
         <input type="checkbox" v-model="todo.done">
-        <button>Edit</button>
-        {{ todo.text }}
+        <input type="checkbox" v-model="todo.editing">
+        <input v-if="todo.editing" v-model="todo.text" @keyup.enter="todo.editing = !todo.editing">
+        <span v-else>{{ todo.text }}</span>
       </label>
     </div>
   </div>
@@ -27,18 +28,10 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       todos: [
-        {
-          text: 'vue-router', done: false
-        },
-        {
-          text: 'vuex', done: false
-        },
-        {
-          text: 'vue-loader', done: false
-        },
-        {
-          text: 'awesome-vue', done: true
-        }
+        {text: 'vue-router', done: false, editing: false},
+        {text: 'vuex', done: false, editing: false},
+        {text: 'vue-loader', done: false, editing: false},
+        {text: 'hoge fuga', done: true, editing: false}
       ],
       newTodo: ''
     }
@@ -51,7 +44,8 @@ export default {
       }
       this.todos.push({
         text: text,
-        done: false
+        done: false,
+        editing: false
       })
       this.newTodo = ''
     },
