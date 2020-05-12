@@ -11,6 +11,7 @@
         class="task-list__item"
         v-for="todo in todos"
         :key="todo.text"
+        :class="{ 'task-list__item--checked': todo.done }"
       >
         <input type="checkbox" v-model="todo.done">
         <input type="checkbox" v-model="todo.editing">
