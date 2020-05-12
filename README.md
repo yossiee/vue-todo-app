@@ -1,22 +1,28 @@
 # vue-todo-app
 
-> A Vue.js project
+## installation
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+```sh
+# Better to install from `nodenv`
+$ node --version
+v13.8.0
 
-# serve with hot reload at localhost:8080
-npm run dev
+$ yarn --version
+1.22.4
 
-# build for production with minification
-npm run build
+# Introduce vue-cli
+$ vue --version
+@vue/cli 4.3.1
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# vue-todo-app
+## Build
+
+``` sh
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:8080
+$ yarn dev
+```
